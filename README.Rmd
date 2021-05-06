@@ -21,7 +21,7 @@ scale, and shape introduced by de Jong (2012), de Jong, van Buuren and
 Spiess (2016). It has been tested mostly with continous variables,
 count, and binary data.
 
-This is a fork where the EXP, GA, LNO, IG, WEI and WEI2 distributions have been included.
+_This is a fork where the EXP, GA, LNO, IG, WEI and WEI2 distributions have been included._
 
 ## Installation
 
@@ -56,41 +56,7 @@ function with a different fixed response distribution.
 |`mice.impute.gamlssWEI2()` | Weibull (proportional hazard models) |
 
 
-## Examples
-
-The package is intended to be used with mice, adding new methods based
-on GAMLSS. For example, let's say we have a data sets with missing values:
-
-```{r, echo = FALSE}
-load('data/sample.rda')
-suppressMessages(library(ImputeRobust))
-```
-
-```{r}
-# First lines of the data set
-head(sample.data)
-
-# Log-transform the first variable
-sample.data[, 1] <- log(sample.data[, 1] + 3)
-```
-
-```{r}
-# Missing pattern
-md.pattern(sample.data)
-```
-
-```{r, eval = FALSE}
-# Create the imputed data sets
-imputed.sets <- mice(sample.data,
-                     method = c("gamlssLNO", "gamlssPO",
-                                "gamlssJSU", "gamlssBI", "gamlss"),
-                     visitSequence = "monotone",
-                     maxit = 1, seed = 97123)
-```
-
-In the following plot the red circles represent the imputed values and
-the blue circles the observed data.
-![](sample.png)
+For further information, please check the original github repository at [https://github.com/dsalfran/ImputeRobust](https://github.com/dsalfran/ImputeRobust).
 
 ## References
 
