@@ -33,6 +33,8 @@ Rigby, R. A., and Stasinopoulos,
   (Applied Statistics) 54 (3): 507–54.
 }
 \author{
+François Guilhaumon \email{francois.guilhaumon@ird.fr}
+
 Daniel Salfran \email{daniel.salfran@uni-hamburg.de}
 
 Martin Spiess \email{martin.spiess@uni-hamburg.de}

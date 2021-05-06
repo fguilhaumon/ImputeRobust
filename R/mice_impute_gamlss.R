@@ -117,7 +117,7 @@ mice.impute.gamlss <- function(y, ry, x, family = NO, n.ind.par = 2,
         y[!ry] <- imputed.values
         R = !is.na(y)
         R[!ry][idx] = FALSE
-        new.values <- mice.impute.midastouch(y=y, ry=R, x=x)
+        new.values <- mice.impute.midastouch(y = y, ry = R, x = x)
         imputed.values[idx] <- new.values
       }
     }
@@ -134,6 +134,66 @@ mice.impute.gamlssNO <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
 
   return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
 }
+
+# ------ Supplementary methods for coral traits imputation ---------------------
+### EXP, GA, LNO, IG, WEI, WEI2
+
+#' @rdname mice.impute.gamlss
+#' @export
+mice.impute.gamlssEXP <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
+  Call <- match.call(expand.dots = TRUE)
+  Call[["family"]] <- EXP
+  Call[["n.ind.par"]] <- 1
+  
+  return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
+}
+
+#' @rdname mice.impute.gamlss
+#' @export
+mice.impute.gamlssGA <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
+  Call <- match.call(expand.dots = TRUE)
+  Call[["family"]] <- GA
+  
+  return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
+}
+
+#' @rdname mice.impute.gamlss
+#' @export
+mice.impute.gamlssLNO <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
+  Call <- match.call(expand.dots = TRUE)
+  Call[["family"]] <- LNO
+  
+  return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
+}
+
+#' @rdname mice.impute.gamlss
+#' @export
+mice.impute.gamlssIG <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
+  Call <- match.call(expand.dots = TRUE)
+  Call[["family"]] <- IG
+  
+  return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
+}
+
+#' @rdname mice.impute.gamlss
+#' @export
+mice.impute.gamlssWEI <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
+  Call <- match.call(expand.dots = TRUE)
+  Call[["family"]] <- WEI
+  
+  return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
+}
+
+#' @rdname mice.impute.gamlss
+#' @export
+mice.impute.gamlssWEI2 <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
+  Call <- match.call(expand.dots = TRUE)
+  Call[["family"]] <- WEI2
+  
+  return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
+}
+
+#### End of added fucntion for coral traits imputation
 
 #' @rdname mice.impute.gamlss
 #' @export

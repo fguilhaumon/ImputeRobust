@@ -3,21 +3,47 @@
 \name{mice.impute.gamlss}
 \alias{mice.impute.gamlss}
 \alias{mice.impute.gamlssNO}
+\alias{mice.impute.gamlssEXP}
+\alias{mice.impute.gamlssGA}
+\alias{mice.impute.gamlssLNO}
+\alias{mice.impute.gamlssIG}
+\alias{mice.impute.gamlssWEI}
+\alias{mice.impute.gamlssWEI2}
 \alias{mice.impute.gamlssBI}
 \alias{mice.impute.gamlssJSU}
 \alias{mice.impute.gamlssPO}
 \alias{mice.impute.gamlssTF}
-\alias{mice.impute.gamlssGA}
 \alias{mice.impute.gamlssZIBI}
 \alias{mice.impute.gamlssZIP}
 \alias{fit.gamlss}
 \title{Multiple Imputation with Generalized Additive Models for Location,
 Scale, and Shape.}
 \usage{
-mice.impute.gamlss(y, ry, x, family = NO, n.ind.par = 2,
-  fitted.gam = NULL, gam.mod = list(type = "pb"), EV = TRUE, ...)
+mice.impute.gamlss(
+  y,
+  ry,
+  x,
+  family = NO,
+  n.ind.par = 2,
+  fitted.gam = NULL,
+  gam.mod = list(type = "pb"),
+  EV = TRUE,
+  ...
+)
 
 mice.impute.gamlssNO(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
+mice.impute.gamlssEXP(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
+mice.impute.gamlssGA(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
+mice.impute.gamlssLNO(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
+mice.impute.gamlssIG(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
+mice.impute.gamlssWEI(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
+mice.impute.gamlssWEI2(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
 mice.impute.gamlssBI(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
@@ -33,8 +59,15 @@ mice.impute.gamlssZIBI(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
 mice.impute.gamlssZIP(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
-fit.gamlss(y, ry, x, family = NO, n.ind.par = 2, gam.mod = list(type
-  = "pb"), ...)
+fit.gamlss(
+  y,
+  ry,
+  x,
+  family = NO,
+  n.ind.par = 2,
+  gam.mod = list(type = "pb"),
+  ...
+)
 }
 \arguments{
 \item{y}{Numeric vector with incomplete data.}

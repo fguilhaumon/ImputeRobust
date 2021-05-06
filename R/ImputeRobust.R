@@ -12,6 +12,7 @@
 #' shape (e.g., skewness and kurtosis) of the conditional distribution
 #' of the dependent variable given all other variables.
 #'
+#' @author François Guilhaumon \email{francois.guilhaumon@ird.fr}
 #' @author Daniel Salfran \email{daniel.salfran@uni-hamburg.de}
 #' @author Martin Spiess \email{martin.spiess@uni-hamburg.de}
 #'

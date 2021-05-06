@@ -4,14 +4,16 @@
 \name{sample.data}
 \alias{sample.data}
 \title{Sample data set with a monotone missing pattern}
-\format{A data frame with 200 rows on the following 5 variables
+\format{
+A data frame with 200 rows on the following 5 variables
   \describe{
 \item{X.1}{Numeric variable from a Normal distribution}
 \item{X.2}{Count data from a Poisson distribution}
 \item{X.3}{Numeric variable from a Normal distribution}
 \item{X.4}{Binary variable from a Binomial distribution}
 \item{y}{Response variable}
-}}
+}
+}
 \description{
 A simple data set with monotone missing pattern
 }

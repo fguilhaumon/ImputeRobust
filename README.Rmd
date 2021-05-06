@@ -21,14 +21,15 @@ scale, and shape introduced by de Jong (2012), de Jong, van Buuren and
 Spiess (2016). It has been tested mostly with continous variables,
 count, and binary data.
 
+This is a fork where the EXP, GA, LNO, IG, WEI and WEI2 distributions have been included.
+
 ## Installation
 
 The latest version can be installed from GitHub as follows:
 
 ```{r eval = FALSE}
-install.packages("devtools")
-devtools::install_git(url = "https://github.com/dsalfran/ImputeRobust", 
-                      branch = "master")
+#install.packages("devtools")
+devtools::install_github("fguilhaumon/ImputeRobust")
 ```
 
 ## Main functions
@@ -38,15 +39,22 @@ The main function in the `ImputeRobust` package is
 Normal distribution. All other functions are variants of the main
 function with a different fixed response distribution.
 
-|Function Name             | Response distribution                                                 |
-|--------------------------|---------------------------------------------------------------------- |
-|`mice.impute.gamlss()`    | Normal |
-|`mice.impute.gamlssBI()`  | Binomial |
-|`mice.impute.gamlssJSU()` | Johnson's SU |
-|`mice.impute.gamlssPO()`  | Poisson |
-|`mice.impute.gamlssTF()`  | t-distribution |
-|`mice.impute.gamlssZIBI()`| Zero inflated binomial |
-|`mice.impute.gamlssZIP()` | Zero inflated Poisson |
+|Function Name              | Response distribution                                                 |
+|---------------------------|---------------------------------------------------------------------- |
+|`mice.impute.gamlss()`     | Normal |
+|`mice.impute.gamlssBI()`   | Binomial |
+|`mice.impute.gamlssJSU()`  | Johnson's SU |
+|`mice.impute.gamlssPO()`   | Poisson |
+|`mice.impute.gamlssTF()`   | t-distribution |
+|`mice.impute.gamlssZIBI()` | Zero inflated binomial |
+|`mice.impute.gamlssZIP()`  | Zero inflated Poisson |
+|`mice.impute.gamlssEXP()`  | Exponential |
+|`mice.impute.gamlssGA()`   | Gamma |
+|`mice.impute.gamlssLNO()`  | log-Normal (Box-Cox) |
+|`mice.impute.gamlssIG()`   | Inverse Gaussian |
+|`mice.impute.gamlssWEI()`  | Weibull  |
+|`mice.impute.gamlssWEI2()` | Weibull (proportional hazard models) |
+
 
 ## Examples
 
@@ -61,6 +69,9 @@ suppressMessages(library(ImputeRobust))
 ```{r}
 # First lines of the data set
 head(sample.data)
+
+# Log-transform the first variable
+sample.data[, 1] <- log(sample.data[, 1] + 3)
 ```
 
 ```{r}
@@ -71,7 +82,7 @@ md.pattern(sample.data)
 ```{r, eval = FALSE}
 # Create the imputed data sets
 imputed.sets <- mice(sample.data,
-                     method = c("gamlss", "gamlssPO",
+                     method = c("gamlssLNO", "gamlssPO",
                                 "gamlssJSU", "gamlssBI", "gamlss"),
                      visitSequence = "monotone",
                      maxit = 1, seed = 97123)
