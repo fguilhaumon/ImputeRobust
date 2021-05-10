@@ -7,8 +7,8 @@ scale, and shape introduced by de Jong (2012), de Jong, van Buuren and
 Spiess (2016). It has been tested mostly with continous variables,
 count, and binary data.
 
-*This is a fork where the EXP, GA, LNO, IG, WEI and WEI2 distributions
-have been included.*
+*This is a fork where the EXP, GA, LNO, IG, WEI, WEI2 BCPEo, PARETO2o, LOGNO2, 
+and BCTo distributions have been included.*
 
 ## Installation
 
@@ -26,21 +26,25 @@ The main function in the `ImputeRobust` package is
 Normal distribution. All other functions are variants of the main
 function with a different fixed response distribution.
 
-| Function Name              | Response distribution                |
-|----------------------------|--------------------------------------|
-| `mice.impute.gamlss()`     | Normal                               |
-| `mice.impute.gamlssBI()`   | Binomial                             |
-| `mice.impute.gamlssJSU()`  | Johnson’s SU                         |
-| `mice.impute.gamlssPO()`   | Poisson                              |
-| `mice.impute.gamlssTF()`   | t-distribution                       |
-| `mice.impute.gamlssZIBI()` | Zero inflated binomial               |
-| `mice.impute.gamlssZIP()`  | Zero inflated Poisson                |
-| `mice.impute.gamlssEXP()`  | Exponential                          |
-| `mice.impute.gamlssGA()`   | Gamma                                |
-| `mice.impute.gamlssLNO()`  | log-Normal (Box-Cox)                 |
-| `mice.impute.gamlssIG()`   | Inverse Gaussian                     |
-| `mice.impute.gamlssWEI()`  | Weibull                              |
-| `mice.impute.gamlssWEI2()` | Weibull (proportional hazard models) |
+| Function Name                 | Response distribution                |
+|-------------------------------|--------------------------------------|
+| `mice.impute.gamlss()`        | Normal                               |
+| `mice.impute.gamlssBI()`      | Binomial                             |
+| `mice.impute.gamlssJSU()`     | Johnson’s SU                         |
+| `mice.impute.gamlssPO()`      | Poisson                              |
+| `mice.impute.gamlssTF()`      | t-distribution                       |
+| `mice.impute.gamlssZIBI()`    | Zero inflated binomial               |
+| `mice.impute.gamlssZIP()`     | Zero inflated Poisson                |
+| `mice.impute.gamlssEXP()`     | Exponential                          |
+| `mice.impute.gamlssGA()`      | Gamma                                |
+| `mice.impute.gamlssLNO()`     | log-Normal (Box-Cox)                 |
+| `mice.impute.gamlssIG()`      | Inverse Gaussian                     |
+| `mice.impute.gamlssWEI()`     | Weibull                              |
+| `mice.impute.gamlssWEI2()`    | Weibull (proportional hazard models) |
+| `mice.impute.gamlssBCPEo()`   | Box-Cox Power Expon. orig.           |
+| `mice.impute.gamlssPARETO2o()`| Pareto 2 original                    |
+| `mice.impute.gamlssLOGNO2()`  | log normal 2                         |
+| `mice.impute.gamlssBCTo()`    | Box-Cox t orig                       |
 
 For further information, please check the original github repository at
 <https://github.com/dsalfran/ImputeRobust>.

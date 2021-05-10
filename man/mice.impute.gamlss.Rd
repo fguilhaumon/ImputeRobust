@@ -9,6 +9,10 @@
 \alias{mice.impute.gamlssIG}
 \alias{mice.impute.gamlssWEI}
 \alias{mice.impute.gamlssWEI2}
+\alias{mice.impute.gamlssLOGNO2}
+\alias{mice.impute.gamlssBCTo}
+\alias{mice.impute.gamlssBCPEo}
+\alias{mice.impute.gamlssPARETO2o}
 \alias{mice.impute.gamlssBI}
 \alias{mice.impute.gamlssJSU}
 \alias{mice.impute.gamlssPO}
@@ -44,6 +48,14 @@ mice.impute.gamlssIG(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 mice.impute.gamlssWEI(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
 mice.impute.gamlssWEI2(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
+mice.impute.gamlssLOGNO2(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
+mice.impute.gamlssBCTo(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
+mice.impute.gamlssBCPEo(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
+mice.impute.gamlssPARETO2o(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
 mice.impute.gamlssBI(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
