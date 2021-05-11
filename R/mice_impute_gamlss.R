@@ -136,7 +136,7 @@ mice.impute.gamlssNO <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
 }
 
 # ------ Supplementary methods for coral traits imputation ---------------------
-### EXP, GA, LNO, IG, WEI, WEI2, LOGNO2, BCTo, PARETO2o, BCPEo
+### EXP, GA, IGAMMA, LNO, IG, WEI, WEI2, WEI3, LOGNO, LOGNO2, BCTo, PARETO2o, BCPEo
 
 #' @rdname mice.impute.gamlss
 #' @export
@@ -153,6 +153,15 @@ mice.impute.gamlssEXP <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
 mice.impute.gamlssGA <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
   Call <- match.call(expand.dots = TRUE)
   Call[["family"]] <- GA
+  
+  return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
+}
+
+#' @rdname mice.impute.gamlss
+#' @export
+mice.impute.gamlssIGAMMA <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
+  Call <- match.call(expand.dots = TRUE)
+  Call[["family"]] <- IGAMMA
   
   return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
 }
@@ -189,6 +198,24 @@ mice.impute.gamlssWEI <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
 mice.impute.gamlssWEI2 <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
   Call <- match.call(expand.dots = TRUE)
   Call[["family"]] <- WEI2
+  
+  return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
+}
+
+#' @rdname mice.impute.gamlss
+#' @export
+mice.impute.gamlssWEI3 <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
+  Call <- match.call(expand.dots = TRUE)
+  Call[["family"]] <- WEI3
+  
+  return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
+}
+
+#' @rdname mice.impute.gamlss
+#' @export
+mice.impute.gamlssLOGNO <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
+  Call <- match.call(expand.dots = TRUE)
+  Call[["family"]] <- LOGNO
   
   return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
 }

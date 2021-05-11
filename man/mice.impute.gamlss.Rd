@@ -5,10 +5,13 @@
 \alias{mice.impute.gamlssNO}
 \alias{mice.impute.gamlssEXP}
 \alias{mice.impute.gamlssGA}
+\alias{mice.impute.gamlssIGAMMA}
 \alias{mice.impute.gamlssLNO}
 \alias{mice.impute.gamlssIG}
 \alias{mice.impute.gamlssWEI}
 \alias{mice.impute.gamlssWEI2}
+\alias{mice.impute.gamlssWEI3}
+\alias{mice.impute.gamlssLOGNO}
 \alias{mice.impute.gamlssLOGNO2}
 \alias{mice.impute.gamlssBCTo}
 \alias{mice.impute.gamlssBCPEo}
@@ -41,6 +44,8 @@ mice.impute.gamlssEXP(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
 mice.impute.gamlssGA(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
+mice.impute.gamlssIGAMMA(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
 mice.impute.gamlssLNO(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
 mice.impute.gamlssIG(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
@@ -48,6 +53,10 @@ mice.impute.gamlssIG(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 mice.impute.gamlssWEI(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
 mice.impute.gamlssWEI2(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
+mice.impute.gamlssWEI3(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
+mice.impute.gamlssLOGNO(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
 mice.impute.gamlssLOGNO2(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
