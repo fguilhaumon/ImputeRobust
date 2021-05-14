@@ -127,7 +127,7 @@ ImpGamlssFit <- function(data, new.data, family, n.ind.par, gam.mod,
     # corresponding to the distribution family of the gamlss
     # model
     function(...) {
-      r <- paste("r", fit$family[1], sep = "")
+      r <- paste("gamlss.dist::r", fit$family[1], sep = "")
 
       predictions$y <- NULL
       do.call(r,

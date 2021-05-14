@@ -225,7 +225,7 @@ mice.impute.gamlssLOGNO <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 mice.impute.gamlssLOGNO2 <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
   Call <- match.call(expand.dots = TRUE)
   Call[["family"]] <- LOGNO2
-  
+
   return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
 }
 
