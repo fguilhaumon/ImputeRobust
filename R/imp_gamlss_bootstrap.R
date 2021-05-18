@@ -11,6 +11,7 @@
 #'   function
 #'
 #' @return Returns a imputation sample generator.
+#' @export
 ImpGamlssBootstrap <- function(incomplete.data, fit, R, ...) {
   ## Imputation using the bootstrap predictive distribution
 

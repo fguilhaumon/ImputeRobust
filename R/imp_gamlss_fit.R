@@ -36,6 +36,7 @@
 #'
 #' @return Returns a method to generate random samples for the fitted
 #'   gamlss model using "new.data" as covariates.
+#' @export
 ImpGamlssFit <- function(data, new.data, family, n.ind.par, gam.mod,
                          mod.planb = list(type = "pb", par = list(degree = 1, order = 1)),
                          n.par.planb = n.ind.par, lin.terms = NULL,
