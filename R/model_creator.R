@@ -15,6 +15,7 @@
 #'   an additive term instead of defining a spline.
 #'
 #' @return Returns a formula object.
+#' @export
 ModelCreator <- function(data, gam.model, lin.terms = NULL){
   if (class(data) != "data.frame") {
     stop("'data' must be a data frame")

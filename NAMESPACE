@@ -2,6 +2,7 @@
 
 export(ImpGamlssBootstrap)
 export(ImpGamlssFit)
+export(ModelCreator)
 export(fit.gamlss)
 export(mice.impute.gamlss)
 export(mice.impute.gamlssBCPEo)
