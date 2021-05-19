@@ -77,8 +77,7 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
              i.control = glim.control(bf.cyc = bf.cyc, cyc = cyc, ...))},
       error = function(e) {
         tryCatch(
-          cat("PlanB\n")
-          {#options(warn = -1)
+          {cat("PlanB\n")#options(warn = -1)
           gamlss(formula = mu.f1,
                  sigma.formula = sigma.f1,
                  nu.formula = nu.f1,
@@ -89,8 +88,7 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
                  i.control = glim.control(bf.cyc = min(4, bf.cyc), cyc = min(3, cyc), ...))},
           error = function(e) {
             tryCatch(
-              cat("PlanC\n")
-              {#options(warn = -1)
+              {cat("PlanC\n") #options(warn = -1)
               gamlss(formula = mu.f1,
                      sigma.formula = sigma.f1,
                      nu.formula = nu.f1,
