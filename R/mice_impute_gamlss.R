@@ -98,13 +98,8 @@ mice.impute.gamlss <- function(y, ry, x, family = NO, n.ind.par = 2,
   imputed.values <- fitted.gam(...)
   # Repeat the bootstrap step if there is a problem with the fitting
   # of gamlss
-  if (sum(is.na(imputed.values)) > 0) {
-    imputed.values <- fitted.gam(...)
-  }
-  if (sum(is.na(imputed.values)) > 0) {
-    imputed.values <- fitted.gam(...)
-  }
-  if (sum(is.na(imputed.values)) > 0) {
+  while (sum(is.na(imputed.values)) > 0) {
+    message("Repeat the bootstrap step, problem with the fitting of gamlss\n")
     imputed.values <- fitted.gam(...)
   }
 
