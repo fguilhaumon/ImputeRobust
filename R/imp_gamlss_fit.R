@@ -44,7 +44,7 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
                          forceNormal = FALSE, trace = FALSE, ...) {
 
 
-  message("Entering ImpGamlssFit")
+  message("\nEntering ImpGamlssFit\n")
   
   # Really ugly way of specifying the formulas for the gamlss fitting
   # function

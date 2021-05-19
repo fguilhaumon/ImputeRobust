@@ -21,6 +21,8 @@ ModelCreator <- function(data, gam.model, lin.terms = NULL){
     stop("'data' must be a data frame")
   }
 
+  message("\nEntering ModelCreator\n")
+  
   type <- gam.model$type
   par <- gam.model$par
   
@@ -49,6 +51,7 @@ ModelCreator <- function(data, gam.model, lin.terms = NULL){
 
   if (type == "linear" && is.null(lin.terms)) {
     # Define a linear model
+    cat("factors are: ", paste(factors, collapse = " + "), "\n")
     formula <- as.formula(paste(paste(dependent, " ~ ", sep = ""),
                                 paste(factors, collapse = " + ")))
   } else if (type == "linear" && !is.null(lin.terms)) {

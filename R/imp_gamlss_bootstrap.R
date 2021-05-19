@@ -15,6 +15,8 @@
 ImpGamlssBootstrap <- function(incomplete.data, fit, R, ...) {
   ## Imputation using the bootstrap predictive distribution
 
+  message("\nEntering ImpGamlssBootstrap\n")
+  
   available.cases <- subset(incomplete.data, R)
   ## Fit initial gamlss model with completely observed data.
   master.predict <- fit(available.cases, available.cases, ...)
@@ -40,7 +42,7 @@ ImpGamlssBootstrap <- function(incomplete.data, fit, R, ...) {
   }, error = function(e) {
     function(model) {
       do.call(rep,
-              args=list(NA, nrow(subset(incomplete.data, !R))))}
+              args = list(NA, nrow(subset(incomplete.data, !R))))}
   }
   )
 }
