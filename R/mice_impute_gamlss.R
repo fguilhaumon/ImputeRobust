@@ -88,7 +88,7 @@
 #'
 #' @export
 mice.impute.gamlss <- function(y, ry, x, family = NO, n.ind.par = 2,
-                               fitted.gam = NULL, gam.mod = list(type = "pb"),
+                               fitted.gam = NULL, gam.mod = list(type = "linear"),
                                EV = TRUE, ...) {
   Call <- match.call(expand.dots = TRUE)
 
@@ -326,7 +326,7 @@ mice.impute.gamlssZIP <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
 #' @rdname mice.impute.gamlss
 #' @export
 fit.gamlss <- function(y, ry, x, family = NO, n.ind.par = 2,
-                       gam.mod = list(type = "pb"), ...) {
+                       gam.mod = list(type = "linear"), ...) {
 
   data <- data.frame(y, x)
 
