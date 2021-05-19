@@ -44,6 +44,8 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
                          forceNormal = FALSE, trace = FALSE, ...) {
 
 
+  message("Entering ImpGamlssFit")
+  
   # Really ugly way of specifying the formulas for the gamlss fitting
   # function
   mu.f1 <- ModelCreator(data, gam.mod, lin.terms)
@@ -67,6 +69,7 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
     # (ignored if not needed) and the given distribution family
     fit <- tryCatch(
       {#options(warn = -1)
+      message("Fitting the original gamlss formula: ", as.charcater(mu.f1))
       gamlss(formula = mu.f1,
              sigma.formula = sigma.f1,
              nu.formula = nu.f1,
@@ -77,7 +80,7 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
              i.control = glim.control(bf.cyc = bf.cyc, cyc = cyc, ...))},
       error = function(e) {
         tryCatch(
-          {cat("PlanB\n")#options(warn = -1)
+          {cat("\nPlanB\n")#options(warn = -1)
           gamlss(formula = mu.f1,
                  sigma.formula = sigma.f1,
                  nu.formula = nu.f1,
@@ -137,7 +140,9 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
     }
   },
   error = function(e) {
-    function(...) {do.call(rep, args = list(NA, nrow(new.data)))}
+    function(...) {
+      message("Unfortunately we did not get a gamlss fit, returning all NAs ...\n")
+      do.call(rep, args = list(NA, nrow(new.data)))}
   })
 
 }

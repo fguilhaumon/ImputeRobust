@@ -100,11 +100,10 @@ mice.impute.gamlss <- function(y, ry, x, family = NO, n.ind.par = 2,
   # of gamlss
   
   count <- 0
-  
-  while (sum(is.na(imputed.values)) > 0 | count < 10) {
-    message(Call)
-    message("Repeat the bootstrap step, problem with the fitting of gamlss\n")
+  n_tries <- 3
+  while (sum(is.na(imputed.values)) > 0 | count < 3) {
     count <- count + 1
+    message("Repeat the bootstrap step, problem when fitting gamlss (", count,  "/", n_tries,"\n")
     imputed.values <- fitted.gam(...)
   }
 
