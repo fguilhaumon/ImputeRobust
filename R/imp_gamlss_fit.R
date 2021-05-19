@@ -69,7 +69,7 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
     # (ignored if not needed) and the given distribution family
     fit <- tryCatch(
       {#options(warn = -1)
-      message("Fitting the original gamlss formula: ", as.charcater(mu.f1))
+      cat("Fitting the original gamlss formula: ", as.charcater(mu.f1), "\n")
       gamlss(formula = mu.f1,
              #sigma.formula = sigma.f1,
              #nu.formula = nu.f1,
@@ -82,14 +82,15 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
              )},
       error = function(e) {
         tryCatch(
-          {cat("\nPlanB\n")#options(warn = -1)
+          {cat("\nPlanB because of : ", as.character(e))#options(warn = -1)
           gamlss(formula = mu.f1,
                  sigma.formula = sigma.f1,
                  nu.formula = nu.f1,
                  tau.formula = tau.f1,
                  family = family,
                  data = data,
-                 control = gamlss.control(n.cyc = min(3, n.cyc), trace = trace , ...),
+                 method = mixed(),
+                 control = gamlss.control(n.cyc = n.cyc, trace = trace, ...),
                  i.control = glim.control(bf.cyc = min(4, bf.cyc), cyc = min(3, cyc), ...))},
           error = function(e) {
             tryCatch(
@@ -100,7 +101,8 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
                      tau.formula = tau.f1,
                      family = family,
                      data = data,
-                     control = gamlss.control(n.cyc = min(3, n.cyc), trace = trace , ...),
+                     method = mixed(),
+                     control = gamlss.control(n.cyc = n.cyc, trace = trace, ...),
                      i.control = glim.control(bf.cyc = min(3, bf.cyc), cyc = min(2, cyc), ...))},
               error = function(e) {
                 cat("PlanD\n")
@@ -111,7 +113,8 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
                        tau.formula = tau.planb,
                        family = family.planb,
                        data = data,
-                       control = gamlss.control(n.cyc = min(3, n.cyc), trace = trace , ...),
+                       method = mixed(),
+                       control = gamlss.control(n.cyc = n.cyc, trace = trace, ...),
                        i.control = glim.control(bf.cyc = min(3, bf.cyc), cyc = min(2, cyc), ...))
               }
             )
