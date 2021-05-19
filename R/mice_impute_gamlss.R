@@ -98,11 +98,18 @@ mice.impute.gamlss <- function(y, ry, x, family = NO, n.ind.par = 2,
   imputed.values <- fitted.gam(...)
   # Repeat the bootstrap step if there is a problem with the fitting
   # of gamlss
-  while (sum(is.na(imputed.values)) > 0) {
+  
+  count <- 0
+  
+  while (sum(is.na(imputed.values)) > 0 | count < 10) {
+    message(Call)
     message("Repeat the bootstrap step, problem with the fitting of gamlss\n")
+    count <- count + 1
     imputed.values <- fitted.gam(...)
   }
 
+  
+  
   if (EV) {
     if (!(sum(is.na(imputed.values)) == length(imputed.values))) {
       outliers <- getOutliers(imputed.values, rho = c(.3, .3), FLim = c(0.15, 0.85))
