@@ -40,7 +40,7 @@
 ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
                          mod.planb = list(type = "pb", par = list(degree = 1, order = 1)),
                          n.par.planb = n.ind.par, lin.terms = NULL,
-                         n.cyc = 5, bf.cyc = 5, cyc = 5,
+                         n.cyc = 50, bf.cyc = 5, cyc = 5,
                          forceNormal = FALSE, trace = FALSE, ...) {
 
 
@@ -71,13 +71,15 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
       {#options(warn = -1)
       message("Fitting the original gamlss formula: ", as.charcater(mu.f1))
       gamlss(formula = mu.f1,
-             sigma.formula = sigma.f1,
-             nu.formula = nu.f1,
-             tau.formula = tau.f1,
+             #sigma.formula = sigma.f1,
+             #nu.formula = nu.f1,
+             #tau.formula = tau.f1,
              family = family,
              data = data,
-             control = gamlss.control(n.cyc = n.cyc, trace = trace, ...),
-             i.control = glim.control(bf.cyc = bf.cyc, cyc = cyc, ...))},
+             method = mixed(),
+             control = gamlss.control(n.cyc = n.cyc, trace = trace, ...)
+             #i.control = glim.control(bf.cyc = bf.cyc, cyc = cyc, ...)
+             )},
       error = function(e) {
         tryCatch(
           {cat("\nPlanB\n")#options(warn = -1)
