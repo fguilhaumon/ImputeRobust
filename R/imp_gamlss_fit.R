@@ -69,7 +69,7 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
     # (ignored if not needed) and the given distribution family
     fit <- tryCatch(
       {#options(warn = -1)
-      cat("Fitting the original gamlss formula: ", as.charcater(mu.f1), "\n")
+      cat("Fitting the original gamlss formula: ", as.character(mu.f1), "\n")
       gamlss(formula = mu.f1,
              #sigma.formula = sigma.f1,
              #nu.formula = nu.f1,
