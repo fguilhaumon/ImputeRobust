@@ -162,6 +162,15 @@ mice.impute.gamlssGA <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
 
 #' @rdname mice.impute.gamlss
 #' @export
+mice.impute.gamlssGP <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
+  Call <- match.call(expand.dots = TRUE)
+  Call[["family"]] <- GP
+  
+  return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
+}
+
+#' @rdname mice.impute.gamlss
+#' @export
 mice.impute.gamlssIGAMMA <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
   Call <- match.call(expand.dots = TRUE)
   Call[["family"]] <- IGAMMA
@@ -243,7 +252,7 @@ mice.impute.gamlssBCTo <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) 
 
 #' @rdname mice.impute.gamlss
 #' @export
-mice.impute.gamlssBCPEo<- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
+mice.impute.gamlssBCPEo <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
   Call <- match.call(expand.dots = TRUE)
   Call[["family"]] <- BCPEo
   
@@ -252,9 +261,18 @@ mice.impute.gamlssBCPEo<- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) 
 
 #' @rdname mice.impute.gamlss
 #' @export
-mice.impute.gamlssPARETO2o<- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
+mice.impute.gamlssPARETO2o <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
   Call <- match.call(expand.dots = TRUE)
   Call[["family"]] <- PARETO2o
+  
+  return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
+}
+
+#' @rdname mice.impute.gamlss
+#' @export
+mice.impute.gamlssPARETO2 <- function(y, ry, x, fitted.gam = NULL, EV = TRUE, ...) {
+  Call <- match.call(expand.dots = TRUE)
+  Call[["family"]] <- PARETO2
   
   return(do.call(mice.impute.gamlss, as.list(Call)[-1]))
 }

@@ -38,7 +38,7 @@
 #'   gamlss model using "new.data" as covariates.
 #' @export
 ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
-                         mod.planb = list(type = "pb", par = list(degree = 1, order = 1)),
+                         mod.planb = list(type = "linear"),
                          n.par.planb = n.ind.par, lin.terms = NULL,
                          n.cyc = 50, bf.cyc = 5, cyc = 5,
                          forceNormal = FALSE, trace = FALSE, ...) {
@@ -84,9 +84,9 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
         tryCatch(
           {cat("\nPlanB because of : ", as.character(e))#options(warn = -1)
           gamlss(formula = mu.f1,
-                 sigma.formula = sigma.f1,
-                 nu.formula = nu.f1,
-                 tau.formula = tau.f1,
+                 # sigma.formula = sigma.f1,
+                 # nu.formula = nu.f1,
+                 # tau.formula = tau.f1,
                  family = family,
                  data = data,
                  method = mixed(),
@@ -96,9 +96,9 @@ ImpGamlssFit <- function(data, new.data = NULL, family, n.ind.par, gam.mod,
             tryCatch(
               {cat("PlanC\n") #options(warn = -1)
               gamlss(formula = mu.f1,
-                     sigma.formula = sigma.f1,
-                     nu.formula = nu.f1,
-                     tau.formula = tau.f1,
+                     # sigma.formula = sigma.f1,
+                     # nu.formula = nu.f1,
+                     # tau.formula = tau.f1,
                      family = family,
                      data = data,
                      method = mixed(),

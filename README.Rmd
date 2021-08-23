@@ -21,7 +21,7 @@ scale, and shape introduced by de Jong (2012), de Jong, van Buuren and
 Spiess (2016). It has been tested mostly with continous variables,
 count, and binary data.
 
-_This is a fork where the EXP, GA, IGAMMA, LNO, IG, WEI, WEI2, WEI3, BCPEo, PARETO2o, LOGNO, LOGNO2, and BCTo distributions have been included.._
+_This is a fork where the EXP, GA, IGAMMA, GP, LNO, IG, WEI, WEI2, WEI3, BCPEo, PARETO2, PARETO2o, LOGNO, LOGNO2, and BCTo distributions have been included.._
 
 ## Installation
 
@@ -29,7 +29,8 @@ The latest version can be installed from GitHub as follows:
 
 ```{r eval = FALSE}
 #install.packages("devtools")
-devtools::install_github("fguilhaumon/ImputeRobust")
+devtools::install_github("fguilhaumon/remotes")
+remotes::install_github("fguilhaumon/ImputeRobust")
 ```
 
 ## Main functions
@@ -50,6 +51,7 @@ function with a different fixed response distribution.
 | `mice.impute.gamlssZIP()`     | Zero inflated Poisson                |
 | `mice.impute.gamlssEXP()`     | Exponential                          |
 | `mice.impute.gamlssGA()`      | Gamma                                |
+| `mice.impute.gamlssGP()`      | Generalized Pareto                   |
 | `mice.impute.gamlssLNO()`     | log-Normal (Box-Cox)                 |
 | `mice.impute.gamlssIG()`      | Inverse Gaussian                     |
 | `mice.impute.gamlssIGAMMA()`  | Inverse Gamma                        |
@@ -57,6 +59,7 @@ function with a different fixed response distribution.
 | `mice.impute.gamlssWEI2()`    | Weibull (proportional hazard models) |
 | `mice.impute.gamlssWEI3()`    | Weibull (µ the mean)                 |
 | `mice.impute.gamlssBCPEo()`   | Box-Cox Power Expon. orig.           |
+| `mice.impute.gamlssPARETO2()` | Pareto 2                             |
 | `mice.impute.gamlssPARETO2o()`| Pareto 2 original                    |
 | `mice.impute.gamlssLOGNO()`   | log normal                           |
 | `mice.impute.gamlssLOGNO2()`  | log normal 2                         |

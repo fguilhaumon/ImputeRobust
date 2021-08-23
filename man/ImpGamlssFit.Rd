@@ -6,14 +6,14 @@
 \usage{
 ImpGamlssFit(
   data,
-  new.data,
+  new.data = NULL,
   family,
   n.ind.par,
   gam.mod,
-  mod.planb = list(type = "pb", par = list(degree = 1, order = 1)),
+  mod.planb = list(type = "linear"),
   n.par.planb = n.ind.par,
   lin.terms = NULL,
-  n.cyc = 5,
+  n.cyc = 50,
   bf.cyc = 5,
   cyc = 5,
   forceNormal = FALSE,

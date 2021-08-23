@@ -5,6 +5,7 @@
 \alias{mice.impute.gamlssNO}
 \alias{mice.impute.gamlssEXP}
 \alias{mice.impute.gamlssGA}
+\alias{mice.impute.gamlssGP}
 \alias{mice.impute.gamlssIGAMMA}
 \alias{mice.impute.gamlssLNO}
 \alias{mice.impute.gamlssIG}
@@ -16,6 +17,7 @@
 \alias{mice.impute.gamlssBCTo}
 \alias{mice.impute.gamlssBCPEo}
 \alias{mice.impute.gamlssPARETO2o}
+\alias{mice.impute.gamlssPARETO2}
 \alias{mice.impute.gamlssBI}
 \alias{mice.impute.gamlssJSU}
 \alias{mice.impute.gamlssPO}
@@ -33,7 +35,7 @@ mice.impute.gamlss(
   family = NO,
   n.ind.par = 2,
   fitted.gam = NULL,
-  gam.mod = list(type = "pb"),
+  gam.mod = list(type = "linear"),
   EV = TRUE,
   ...
 )
@@ -43,6 +45,8 @@ mice.impute.gamlssNO(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 mice.impute.gamlssEXP(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
 mice.impute.gamlssGA(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
+mice.impute.gamlssGP(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
 mice.impute.gamlssIGAMMA(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
@@ -66,6 +70,8 @@ mice.impute.gamlssBCPEo(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
 mice.impute.gamlssPARETO2o(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
+mice.impute.gamlssPARETO2(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
+
 mice.impute.gamlssBI(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
 
 mice.impute.gamlssJSU(y, ry, x, fitted.gam = NULL, EV = TRUE, ...)
@@ -86,7 +92,7 @@ fit.gamlss(
   x,
   family = NO,
   n.ind.par = 2,
-  gam.mod = list(type = "pb"),
+  gam.mod = list(type = "linear"),
   ...
 )
 }
